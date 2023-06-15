@@ -1,5 +1,3 @@
-// Alexander Lokhanov
-
 #define charLimit 1500
 #define NUMSYM 12
 #define NORW 14
@@ -126,7 +124,7 @@ void condition(int lv);
 void exprS(int lv);
 void term(int lv);
 void fctr(int lv);
-void printSymbols();
+//void printSymbols();
 
 int main(int argc, char *argv[]) {
     printf("\n");
@@ -641,7 +639,7 @@ char *prog1()
     sprintf(parseTemp, "No errors. Program is syntactically correct!\n\n");
     strcat(parseOut, parseTemp);
     fprintf(outputfile, "No errors. Program is syntactically correct!\n\n");
-    printSymbols();
+    //printSymbols();
     fclose(inputfile);
     fclose(outputfile);
 
@@ -665,7 +663,8 @@ void parse(){
     if(token.numType != -1)
         errorMessage(inputfile, outputfile, 20);
 }
-
+/*
+ // note: symbol table is not needed now
 void printSymbols()
 {
     int kind;
@@ -683,7 +682,7 @@ void printSymbols()
         printf("\n--------------------------------------------------------------\n\n\n");
     }
 }
-
+*/
 int searchTable(char *name, int lv, int mark)
 {
     if (mark == -1)
