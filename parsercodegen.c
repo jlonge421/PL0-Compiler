@@ -1,5 +1,3 @@
-// Alexander Lokhanov
-
 #define charLimit 1500
 #define NUMSYM 12
 #define NORW 14
