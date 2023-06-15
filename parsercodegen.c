@@ -1,3 +1,5 @@
+// Alexander Lokhanov
+
 #define charLimit 1500
 #define NUMSYM 12
 #define NORW 14
@@ -360,15 +362,18 @@ int main(int argc, char *argv[]) {
         sprintf(lexTemp, "%d", lexemes[lexCnt - 1].numLex);
         strcat(lexOutput, lexTemp);
         fprintf(outFile, "%d", lexemes[lexCnt - 1].numLex);
+        printf("%d", lexemes[lexCnt - 1].numLex);
     } else {
         sprintf(lexTemp, "%s", lexemes[lexCnt - 1].lexeme);
         strcat(lexOutput, lexTemp);
         fprintf(outFile, "%s", lexemes[lexCnt - 1].lexeme);
+        printf("%s", lexemes[lexCnt - 1].lexeme);
     }
 
     sprintf(lexTemp, "\t\t%d\n", lexemes[lexCnt - 1].tokenType);
     strcat(lexOutput, lexTemp);
     fprintf(outFile, "\t\t%d\n", lexemes[lexCnt - 1].tokenType);
+    printf("\t\t%d\n", lexemes[lexCnt - 1].tokenType);
 
 
         
@@ -582,12 +587,14 @@ void displayLexeme(lexemeTable lexemes[], int lexCnt, FILE *outFile)
     sprintf(lexTemp, "Lexeme List:\n");
     strcat(lexOutput, lexTemp);
     fprintf(outFile, "Lexeme List:\n");
+    printf("Lexeme List:\n");
 
     for (int i = 0; i < lexCnt; i++)
     {
         sprintf(lexTemp, "%d ", lexemes[i].tokenType);
         strcat(lexOutput, lexTemp);
         fprintf(outFile, "%d ", lexemes[i].tokenType);
+        printf("%d ", lexemes[i].tokenType);
         fprintf(out, "%d ", lexemes[i].tokenType);
 
         if (lexemes[i].tokenType == identsym) 
@@ -595,6 +602,7 @@ void displayLexeme(lexemeTable lexemes[], int lexCnt, FILE *outFile)
             sprintf(lexTemp, "%s ", lexemes[i].lexeme);
             strcat(lexOutput, lexTemp);
             fprintf(outFile, "%s ", lexemes[i].lexeme);
+            printf("%s ", lexemes[i].lexeme);
             fprintf(out, "%s ", lexemes[i].lexeme);
         }
         if (lexemes[i].tokenType == numbersym) 
@@ -602,6 +610,7 @@ void displayLexeme(lexemeTable lexemes[], int lexCnt, FILE *outFile)
             sprintf(lexTemp, "%d ", lexemes[i].numLex);
             strcat(lexOutput, lexTemp);
             fprintf(outFile, "%d ", lexemes[i].numLex);
+            printf("%d ", lexemes[i].numLex);
             fprintf(out, "%d ", lexemes[i].numLex);
         }
     }
@@ -609,6 +618,7 @@ void displayLexeme(lexemeTable lexemes[], int lexCnt, FILE *outFile)
     sprintf(lexTemp, "\n");
     strcat(lexOutput, lexTemp);
     fprintf(outFile, "\n");
+    printf("\n");
     fprintf(out, "\n");
     fclose(out);
 }
